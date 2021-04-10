@@ -41,20 +41,28 @@ namespace ExamplePlugin
 				microChance = value;
 			}
 		}
-		
-		// Grabs the "DamageMultiplier" field from the plugin with the ID "dev.plugin", given that the field is a pipe
+
+		/// <summary>
+		/// Grabs the "DamageMultiplier" field from the plugin with the ID "dev.plugin", given that the field is a pipe
+		/// </summary>
 		[PipeLink("dev.plugin", "DamageMultiplier")]
 		private FieldPipe<float> damageMultiplier;
 
-		// Registers config setting EP_MY_AWESOMENESS_SCORE with a default of 1 on initialization
+		/// <summary>
+		/// Registers config setting EP_MY_AWESOMENESS_SCORE with a default of 1 on initialization
+		/// </summary>
 		[ConfigOption]
 		public readonly float myAwesomenessScore = 1f;
 
-		// First bool indicates if the variable is the primary user (unless another plugin is using the config, this should be true). Second bool indicates if the variable is a random config.
+		/// <summary>
+		/// First bool indicates if the variable is the primary user (unless another plugin is using the config, this should be true). Second bool indicates if the variable is a random config.
+		/// </summary>
 		[ConfigOption(true, true)]
 		public readonly LiveConfig<int> lottoItemCount = new LiveConfig<int>(1);
 
-		// Registers lang setting CONFIG_VALUE in exampleplugin with a default of "Config value: " on initialization
+		/// <summary>
+		/// Registers lang setting CONFIG_VALUE in exampleplugin with a default of "Config value: " on initialization
+		/// </summary>
 		[LangOption] 
 		public readonly string _configValue = "Config value: "; 
 
